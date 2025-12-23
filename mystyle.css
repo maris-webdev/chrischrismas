@@ -1,59 +1,60 @@
+/* ===== BASE (MOBILE) ===== */
+
 body{
     background-color: rgb(152, 21, 21);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    height: 100vh; /* necessário para centrar verticalmente */
+    align-items: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
 }
 
+/* TÍTULO */
 h1{
-    display: flex;
-    justify-content: center;
     color: aliceblue;
     font-family: "Rubik Gemstones", system-ui;
     font-weight: 400;
-    font-style: normal;
-    font-size: 100px;
+    font-size: 2.2rem;   /* ↓ adaptado para mobile */
+    text-align: center;
+    margin: 20px 10px;
 }
 
+/* TEXTO ESPECIAL */
 .esp{
     font-family: "Vast Shadow", serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
+/* NAV */
 nav{
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     font-family: "Grey Qo", cursive;
     font-weight: 1000;
-    font-style: normal;
     color: #ffb300;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-/* Contêiner da neve */
+/* ===== NEVE ===== */
 .neve {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     pointer-events: none;
     z-index: 999;
 }
 
-/* Cada floco */
 .neve span {
     position: absolute;
     top: -10px;
-    width: 8px;
-    height: 8px;
+    width: 6px;        /* menor no mobile */
+    height: 6px;
     background: white;
     border-radius: 50%;
     opacity: 0.8;
     animation: fall linear infinite;
 }
 
-/* Animação da queda */
 @keyframes fall {
     to {
         transform: translateY(110vh);
@@ -61,23 +62,23 @@ nav{
     }
 }
 
+/* ===== ÁRVORE ===== */
 
 #arvore {
     display: flex;
-    flex-direction: column;   /* coloca um em cima do outro */
-    align-items: center;      /* centra horizontalmente */
-    gap: 5px;                 /* espaço entre as partes (opcional) */
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
 }
 
+/* ESTRELA */
 #star {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
+    width: 70px;     /* ↓ menor para mobile */
+    height: 70px;
 
-    /* cor base */
     background: radial-gradient(circle, #fff7a8 0%, #ffd700 60%, #ffb300 100%);
 
-    /* formato curvado e elegante */
     clip-path: polygon(
         50% 0%,
         60% 25%,
@@ -93,73 +94,52 @@ nav{
         40% 25%
     );
 
-    /* animação */
     animation: shine 2s infinite ease-in-out;
 }
 
-/* brilho suave */
 @keyframes shine {
     0% {
-        transform: scale(1) rotate(0deg);
-        filter: drop-shadow(0 0 6px #ffe066);
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #ffe066);
     }
     50% {
-        transform: scale(1.15) rotate(3deg);
-        filter: drop-shadow(0 0 20px #fff6a1);
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 14px #fff6a1);
     }
     100% {
-        transform: scale(1) rotate(0deg);
-        filter: drop-shadow(0 0 6px #ffe066);
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #ffe066);
     }
 }
 
-
-div{
-    background-color: rgb(16, 48, 0);
-}
-
+/* TEXTO DENTRO DA ÁRVORE */
 p{
-    font-size: larger;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
-#arvore1{
+/* CAMADAS DA ÁRVORE */
+#arvore1, #arvore2, #arvore3{
     display: flex;
-    flex-direction: column;
-    background-color: green;
-    width: 100px;
-    height: 50px;
     justify-content: center;
     align-items: center;
-    border-style: solid;
-    border-width: 10px;
-    border-color: rgb(0, 69, 0);
+    background-color: green;
+    border: 6px solid rgb(0, 69, 0);
+}
+
+/* tamanhos progressivos (mobile) */
+#arvore1{
+    width: 90px;
+    height: 40px;
 }
 
 #arvore2{
-    display: flex;
-    flex-direction: column;
-    background-color: green;
-    width: 200px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-width: 10px;
-    border-color: rgb(0, 69, 0);
+    width: 150px;
+    height: 45px;
 }
 
 #arvore3{
-    display: flex;
-    flex-direction: column;
-    background-color: green;
-    width: 300px;
+    width: 210px;
     height: 50px;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-width: 10px;
-    border-color: rgb(0, 69, 0);
 }
-
-
