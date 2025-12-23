@@ -1,0 +1,165 @@
+body{
+    background-color: rgb(152, 21, 21);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh; /* necessário para centrar verticalmente */
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    font-family: "Rubik Gemstones", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+}
+
+.esp{
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav{
+    background-color: rgb(255, 255, 255);
+    font-family: "Grey Qo", cursive;
+    font-weight: 1000;
+    font-style: normal;
+    color: #ffb300;
+}
+
+/* Contêiner da neve */
+.neve {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Cada floco */
+.neve span {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Animação da queda */
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0.2;
+    }
+}
+
+
+#arvore {
+    display: flex;
+    flex-direction: column;   /* coloca um em cima do outro */
+    align-items: center;      /* centra horizontalmente */
+    gap: 5px;                 /* espaço entre as partes (opcional) */
+}
+
+#star {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+
+    /* cor base */
+    background: radial-gradient(circle, #fff7a8 0%, #ffd700 60%, #ffb300 100%);
+
+    /* formato curvado e elegante */
+    clip-path: polygon(
+        50% 0%,
+        60% 25%,
+        100% 35%,
+        65% 50%,
+        100% 65%,
+        60% 75%,
+        50% 100%,
+        40% 75%,
+        0% 65%,
+        35% 50%,
+        0% 35%,
+        40% 25%
+    );
+
+    /* animação */
+    animation: shine 2s infinite ease-in-out;
+}
+
+/* brilho suave */
+@keyframes shine {
+    0% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 6px #ffe066);
+    }
+    50% {
+        transform: scale(1.15) rotate(3deg);
+        filter: drop-shadow(0 0 20px #fff6a1);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 6px #ffe066);
+    }
+}
+
+
+div{
+    background-color: rgb(16, 48, 0);
+}
+
+p{
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#arvore1{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    width: 100px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(0, 69, 0);
+}
+
+#arvore2{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(0, 69, 0);
+}
+
+#arvore3{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    width: 300px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(0, 69, 0);
+}
+
+
