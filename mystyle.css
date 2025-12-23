@@ -25,17 +25,6 @@ h1{
     font-family: "Vast Shadow", serif;
 }
 
-/* NAV */
-nav{
-    background-color: white;
-    font-family: "Grey Qo", cursive;
-    font-weight: 1000;
-    color: #ffb300;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
 /* ===== NEVE ===== */
 .neve {
     position: fixed;
@@ -143,3 +132,4 @@ p{
     width: 210px;
     height: 50px;
 }
+
